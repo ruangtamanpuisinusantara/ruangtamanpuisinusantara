@@ -1,1985 +1,1777 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-    <meta name="description"
-          content="Ruang Taman Puisi Nusantara - Komunitas Sastra & Seni yang berfokus pada literasi, puisi, dan budaya Nusantara.">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <meta name="keywords"
-          content="Ruang Taman Puisi Nusantara, RTPN, puisi, sastra, literasi, budaya Nusantara">
+  <meta name="description"
+        content="Ruang Taman Puisi Nusantara - Komunitas Sastra & Seni untuk pengembangan literasi, puisi, dan budaya Nusantara.">
 
-    <title>Ruang Taman Puisi Nusantara</title>
+  <meta name="keywords"
+        content="Ruang Taman Puisi Nusantara, RTPN, puisi, sastra, literasi, budaya Nusantara">
 
-    <style>
+  <meta name="author"
+        content="Ruang Taman Puisi Nusantara">
 
-        /* ==============================
-           DASAR
-        ============================== */
+  <meta name="theme-color"
+        content="#123326">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <title>Ruang Taman Puisi Nusantara | RTPN</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f7f2e8;
-            color: #26352f;
-            line-height: 1.7;
-        }
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-        section {
-            padding: 90px 20px;
-        }
+  <style>
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+    /* ==============================
+       DASAR
+    ============================== */
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* ==============================
-           NAVIGASI
-        ============================== */
+    html {
+      scroll-behavior: smooth;
+    }
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
+    body {
+      font-family: "Inter", sans-serif;
+      color: #253128;
+      background: #fbf6e9;
+      line-height: 1.75;
+    }
 
-            background: rgba(14, 52, 42, 0.97);
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-            box-shadow:
-                0 3px 20px rgba(0,0,0,0.15);
-        }
+    img {
+      max-width: 100%;
+    }
 
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+    }
 
-            min-height: 70px;
 
-            padding: 10px 20px;
+    /* ==============================
+       WARNA
+    ============================== */
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    :root {
+      --green-dark: #0b2419;
+      --green: #123326;
+      --green-light: #216044;
 
-        .logo {
-            color: white;
+      --gold: #d5a64a;
+      --gold-light: #f1d58a;
 
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            font-weight: bold;
+      --cream: #fbf6e9;
+      --white: #fffdf7;
 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+      --text: #253128;
+      --muted: #68746d;
+    }
 
-        .logo-symbol {
-            width: 43px;
-            height: 43px;
 
-            border-radius: 50%;
+    /* ==============================
+       NAVBAR
+    ============================== */
 
-            background: #d7ad58;
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+      background: rgba(11, 36, 25, 0.95);
+      backdrop-filter: blur(15px);
 
-            font-size: 22px;
-        }
+      border-bottom: 1px solid rgba(241, 213, 138, 0.15);
+    }
 
-        .nav-links {
-            list-style: none;
+    .nav-container {
+      min-height: 72px;
 
-            display: flex;
-            align-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-            gap: 24px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
 
-            font-family: Arial, sans-serif;
-        }
+      color: white;
 
-        .nav-links a {
-            color: white;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
 
-            font-size: 14px;
+    .brand img {
+      width: 44px;
+      height: 44px;
 
-            transition: 0.3s;
-        }
+      object-fit: cover;
 
-        .nav-links a:hover {
-            color: #e4bd69;
-        }
+      border-radius: 50%;
 
-        .menu-button {
-            display: none;
+      border: 1px solid var(--gold);
+    }
 
-            color: white;
+    .nav-menu {
+      display: flex;
+      gap: 25px;
 
-            font-size: 28px;
+      list-style: none;
+    }
 
-            cursor: pointer;
-        }
+    .nav-menu a {
+      color: rgba(255,255,255,.85);
 
+      font-size: .88rem;
+      font-weight: 600;
 
-        /* ==============================
-           HERO
-        ============================== */
+      transition: .3s;
+    }
 
-        .hero {
-            min-height: 100vh;
+    .nav-menu a:hover {
+      color: var(--gold-light);
+    }
 
-            padding:
-                130px
-                20px
-                80px;
+    .menu-button {
+      display: none;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+      border: 1px solid rgba(255,255,255,.3);
 
-            text-align: center;
+      background: transparent;
+      color: white;
 
-            color: white;
+      padding: 8px 12px;
 
-            background:
-                radial-gradient(
-                    circle at top,
-                    #285c4c,
-                    #10392e 55%,
-                    #09281f
-                );
-        }
+      border-radius: 8px;
 
-        .hero-content {
-            max-width: 900px;
-        }
+      font-size: 20px;
+    }
 
-        .hero-icon {
-            width: 125px;
-            height: 125px;
 
-            margin: 0 auto 25px;
+    /* ==============================
+       HERO
+    ============================== */
 
-            border-radius: 50%;
+    .hero {
+      min-height: 100vh;
 
-            background: #d7ad58;
+      display: grid;
+      align-items: center;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+      padding: 120px 0 70px;
 
-            font-size: 60px;
+      color: white;
 
-            border: 5px solid #e6c77f;
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(213,166,74,.16),
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #0b2419,
+          #123326 55%,
+          #174632
+        );
 
-            box-shadow:
-                0 15px 40px rgba(0,0,0,0.35);
-        }
+      position: relative;
 
-        .badge {
-            display: inline-block;
+      overflow: hidden;
+    }
 
-            padding: 7px 17px;
+    .hero::before {
+      content: "";
 
-            border: 1px solid #d7ad58;
+      position: absolute;
 
-            border-radius: 30px;
+      inset: 25px;
 
-            color: #e4bd69;
+      border: 1px solid
+        rgba(241,213,138,.15);
 
-            font-family: Arial, sans-serif;
+      border-radius: 25px;
+    }
 
-            font-size: 12px;
+    .hero-grid {
+      display: grid;
 
-            letter-spacing: 2px;
+      grid-template-columns:
+        1.05fr .95fr;
 
-            margin-bottom: 22px;
-        }
+      gap: 55px;
 
-        .hero h1 {
-            font-family: Arial, sans-serif;
+      align-items: center;
+    }
 
-            font-size:
-                clamp(
-                    42px,
-                    8vw,
-                    76px
-                );
+    .eyebrow {
+      display: inline-flex;
 
-            line-height: 1.05;
+      align-items: center;
 
-            letter-spacing: -2px;
+      gap: 9px;
 
-            margin-bottom: 25px;
-        }
+      color: var(--gold-light);
 
-        .hero h1 span {
-            color: #e3bc68;
-        }
+      text-transform: uppercase;
 
-        .hero-description {
-            max-width: 720px;
+      letter-spacing: 3px;
 
-            margin: auto;
+      font-size: .75rem;
 
-            font-family: Arial, sans-serif;
+      font-weight: 700;
 
-            font-size: 19px;
+      margin-bottom: 18px;
+    }
 
-            color: #e3ebe7;
-        }
+    .eyebrow::before {
+      content: "";
 
-        .hero-slogan {
-            margin-top: 20px;
+      width: 32px;
+      height: 1px;
 
-            color: #e5c57b;
+      background: var(--gold);
+    }
 
-            font-size: 21px;
+    h1,
+    h2,
+    h3 {
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-            font-style: italic;
-        }
+      line-height: 1.08;
+    }
 
-        .hero-buttons {
-            margin-top: 35px;
+    .hero h1 {
+      font-size:
+        clamp(3rem, 7vw, 6.3rem);
 
-            display: flex;
+      color: #fffaf0;
 
-            justify-content: center;
+      margin-bottom: 20px;
+    }
 
-            gap: 13px;
+    .hero h1 span {
+      color: var(--gold-light);
+    }
 
-            flex-wrap: wrap;
-        }
+    .hero-description {
+      max-width: 650px;
 
-        .button {
-            padding: 13px 25px;
+      color: rgba(255,255,255,.78);
 
-            border-radius: 8px;
+      font-size: 1.05rem;
 
-            font-family: Arial, sans-serif;
+      margin-bottom: 25px;
+    }
 
-            font-weight: bold;
+    .slogan {
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-            font-size: 14px;
+      color: var(--gold-light);
 
-            transition: 0.3s;
-        }
+      font-size: 1.45rem;
 
-        .button-primary {
-            background: #d7ad58;
+      font-style: italic;
 
-            color: #153a2f;
-        }
+      margin-bottom: 30px;
+    }
 
-        .button-primary:hover {
-            transform: translateY(-3px);
-        }
+    .hero-buttons {
+      display: flex;
 
-        .button-outline {
-            border: 1px solid rgba(255,255,255,0.5);
+      flex-wrap: wrap;
 
-            color: white;
-        }
+      gap: 12px;
+    }
 
-        .button-outline:hover {
-            background: white;
+    .button {
+      display: inline-block;
 
-            color: #173b2f;
-        }
+      padding: 12px 21px;
 
+      border-radius: 50px;
 
-        /* ==============================
-           JUDUL SECTION
-        ============================== */
+      font-weight: 700;
 
-        .section-heading {
-            text-align: center;
+      font-size: .9rem;
 
-            margin-bottom: 50px;
-        }
+      transition: .3s;
+    }
 
-        .section-heading small {
-            display: block;
+    .button:hover {
+      transform: translateY(-3px);
+    }
 
-            color: #a77a2b;
+    .button-gold {
+      color: #1a291f;
 
-            font-family: Arial, sans-serif;
+      background:
+        linear-gradient(
+          135deg,
+          #e2b75b,
+          #bd8730
+        );
+    }
 
-            font-size: 12px;
+    .button-outline {
+      color: white;
 
-            font-weight: bold;
+      border: 1px solid
+        rgba(241,213,138,.5);
+    }
 
-            letter-spacing: 2px;
+    .hero-logo {
+      display: block;
 
-            text-transform: uppercase;
-        }
+      width: min(450px, 90%);
 
-        .section-heading h2 {
-            margin-top: 8px;
+      aspect-ratio: 1;
 
-            color: #173b2f;
+      object-fit: cover;
 
-            font-family: Arial, sans-serif;
+      margin: auto;
 
-            font-size: 38px;
+      border-radius: 50%;
 
-            line-height: 1.2;
-        }
+      border: 7px solid
+        rgba(213,166,74,.55);
 
-        .section-heading p {
-            max-width: 700px;
+      box-shadow:
+        0 0 0 12px
+          rgba(213,166,74,.07),
+        0 25px 70px
+          rgba(0,0,0,.35);
+    }
 
-            margin:
-                12px
-                auto
-                0;
 
-            color: #66716b;
-        }
+    /* ==============================
+       SECTION UMUM
+    ============================== */
 
+    section {
+      padding: 95px 0;
+    }
 
-        /* ==============================
-           TENTANG
-        ============================== */
+    .section-header {
+      max-width: 760px;
 
-        .about {
-            background: #fffdf8;
-        }
+      text-align: center;
 
-        .about-grid {
-            display: grid;
+      margin:
+        0 auto 50px;
+    }
 
-            grid-template-columns:
-                1.1fr
-                0.9fr;
+    .section-label {
+      color: var(--green-light);
 
-            gap: 35px;
-        }
+      text-transform: uppercase;
 
-        .white-card {
-            background: white;
+      letter-spacing: 2.5px;
 
-            padding: 35px;
+      font-size: .73rem;
 
-            border-radius: 18px;
+      font-weight: 800;
 
-            box-shadow:
-                0 10px 35px rgba(0,0,0,0.07);
-        }
+      margin-bottom: 10px;
+    }
 
-        .white-card h3 {
-            color: #173b2f;
+    .section-header h2 {
+      color: var(--green);
 
-            font-family: Arial, sans-serif;
+      font-size:
+        clamp(2.4rem, 5vw, 4rem);
 
-            font-size: 27px;
+      margin-bottom: 15px;
+    }
 
-            margin-bottom: 15px;
-        }
+    .section-header p {
+      color: var(--muted);
+    }
 
-        .white-card p {
-            color: #53605a;
 
-            margin-bottom: 13px;
-        }
+    /* ==============================
+       PROFIL
+    ============================== */
 
-        .identity-card {
-            background: #173b2f;
+    .profile {
+      background: var(--white);
+    }
 
-            color: white;
+    .profile-grid {
+      display: grid;
 
-            padding: 35px;
+      grid-template-columns:
+        .8fr 1.2fr;
 
-            border-radius: 18px;
+      gap: 45px;
+    }
 
-            box-shadow:
-                0 15px 35px rgba(0,0,0,0.15);
-        }
+    .profile-card {
+      background: var(--green);
 
-        .identity-card h3 {
-            color: #e3bc68;
+      color: white;
 
-            font-family: Arial, sans-serif;
+      padding: 35px;
 
-            margin-bottom: 20px;
-        }
+      border-radius: 24px;
 
-        .identity-item {
-            padding: 10px 0;
+      box-shadow:
+        0 18px 50px
+        rgba(8,28,19,.14);
+    }
 
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.12);
-        }
+    .profile-card h3 {
+      color: var(--gold-light);
 
-        .identity-item strong {
-            color: #e5c47b;
-        }
+      font-size: 2rem;
 
+      margin-bottom: 25px;
+    }
 
-        /* ==============================
-           SEJARAH
-        ============================== */
+    .facts {
+      list-style: none;
+    }
 
-        .history {
-            background: #f7f2e8;
-        }
+    .facts li {
+      padding: 13px 0;
 
-        .history-box {
-            max-width: 900px;
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+    }
 
-            margin: auto;
+    .facts strong {
+      display: block;
 
-            border-left:
-                4px solid
-                #d7ad58;
+      color: var(--gold-light);
 
-            padding-left: 30px;
-        }
+      font-size: .72rem;
 
-        .history-date {
-            color: #a77a2b;
+      text-transform: uppercase;
 
-            font-family: Arial, sans-serif;
+      letter-spacing: 1.5px;
+    }
 
-            font-weight: bold;
+    .story {
+      display: flex;
 
-            margin-bottom: 8px;
-        }
+      flex-direction: column;
 
-        .history-box h3 {
-            color: #173b2f;
+      justify-content: center;
+    }
 
-            font-family: Arial, sans-serif;
+    .story h3 {
+      color: var(--green);
 
-            font-size: 27px;
+      font-size: 2.4rem;
 
-            margin-bottom: 15px;
-        }
+      margin-bottom: 18px;
+    }
 
-        .history-box p {
-            color: #56625c;
+    .story p {
+      color: #526057;
 
-            margin-bottom: 17px;
-        }
+      margin-bottom: 16px;
+    }
 
+    .quote {
+      border-left:
+        3px solid var(--gold);
 
-        /* ==============================
-           VISI MISI
-        ============================== */
+      padding: 14px 20px;
 
-        .vision {
-            background: #173b2f;
+      margin-top: 10px;
 
-            color: white;
-        }
+      background: #faf4e3;
 
-        .vision .section-heading h2 {
-            color: white;
-        }
+      color: var(--green);
 
-        .vision .section-heading p {
-            color: #cbd8d2;
-        }
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-        .vision-grid {
-            display: grid;
+      font-size: 1.35rem;
 
-            grid-template-columns:
-                1fr
-                1fr;
+      font-style: italic;
+    }
 
-            gap: 25px;
-        }
 
-        .vision-card {
-            padding: 35px;
+    /* ==============================
+       VISI MISI
+    ============================== */
 
-            border:
-                1px solid
-                rgba(255,255,255,0.13);
+    .vision {
+      color: white;
 
-            border-radius: 18px;
+      background:
+        linear-gradient(
+          rgba(18,51,38,.97),
+          rgba(18,51,38,.97)
+        );
+    }
 
-            background:
-                rgba(255,255,255,0.04);
-        }
+    .vision .section-label {
+      color: var(--gold-light);
+    }
 
-        .vision-card h3 {
-            color: #e3bc68;
+    .vision .section-header h2 {
+      color: white;
+    }
 
-            font-family: Arial, sans-serif;
+    .vision .section-header p {
+      color: rgba(255,255,255,.72);
+    }
 
-            font-size: 25px;
+    .vision-grid {
+      display: grid;
 
-            margin-bottom: 15px;
-        }
+      grid-template-columns: 1fr 1fr;
 
-        .mission-list {
-            padding-left: 20px;
-        }
+      gap: 25px;
+    }
 
-        .mission-list li {
-            margin-bottom: 10px;
+    .vision-card {
+      padding: 35px;
 
-            color: #dbe5df;
-        }
+      border-radius: 22px;
 
+      border:
+        1px solid
+        rgba(241,213,138,.25);
 
-        /* ==============================
-           PENCAPAIAN
-        ============================== */
+      background:
+        rgba(255,255,255,.05);
+    }
 
-        .achievements {
-            background: #fffdf8;
-        }
+    .number {
+      width: 46px;
+      height: 46px;
 
-        .achievement-grid {
-            display: grid;
+      display: grid;
+      place-items: center;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+      border-radius: 50%;
 
-            gap: 18px;
-        }
+      border:
+        1px solid
+        var(--gold);
 
-        .achievement-card {
-            text-align: center;
+      color: var(--gold-light);
 
-            padding: 30px 15px;
+      margin-bottom: 20px;
 
-            border-radius: 16px;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-            background: #f4ead8;
-        }
+      font-size: 1.35rem;
+    }
 
-        .achievement-card .number {
-            display: block;
+    .vision-card h3 {
+      color: var(--gold-light);
 
-            color: #173b2f;
+      font-size: 2rem;
 
-            font-family: Arial, sans-serif;
+      margin-bottom: 15px;
+    }
 
-            font-size: 27px;
+    .vision-card p {
+      color: rgba(255,255,255,.78);
+    }
 
-            font-weight: bold;
+    .mission-list {
+      list-style: none;
+    }
 
-            margin-bottom: 7px;
-        }
+    .mission-list li {
+      position: relative;
 
-        .achievement-card p {
-            color: #657069;
+      padding-left: 26px;
 
-            font-family: Arial, sans-serif;
+      margin-bottom: 12px;
 
-            font-size: 14px;
-        }
+      color: rgba(255,255,255,.82);
+    }
 
-        .achievement-description {
-            margin-top: 25px;
+    .mission-list li::before {
+      content: "✦";
 
-            padding: 30px;
+      position: absolute;
 
-            background: white;
+      left: 0;
 
-            border-radius: 18px;
+      color: var(--gold-light);
+    }
 
-            box-shadow:
-                0 8px 25px rgba(0,0,0,0.06);
 
-            color: #59655f;
-        }
+    /* ==============================
+       PERJALANAN
+    ============================== */
 
+    .journey {
+      background: #f5f0e3;
+    }
 
-        /* ==============================
-           FILOSOFI
-        ============================== */
+    .timeline {
+      max-width: 900px;
 
-        .philosophy {
-            background: #f7f2e8;
-        }
+      margin: auto;
 
-        .philosophy-box {
-            max-width: 950px;
+      position: relative;
+    }
 
-            margin: auto;
+    .timeline::before {
+      content: "";
 
-            padding: 40px;
+      position: absolute;
 
-            border-radius: 20px;
+      left: 20px;
 
-            text-align: center;
+      top: 0;
+      bottom: 0;
 
-            background: #173b2f;
+      width: 1px;
 
-            color: white;
-        }
+      background:
+        rgba(213,166,74,.4);
+    }
 
-        .philosophy-box > p {
-            color: #d9e3de;
-        }
+    .timeline-item {
+      position: relative;
 
-        .philosophy-grid {
-            margin: 30px 0;
+      padding:
+        0 0 35px 62px;
+    }
 
-            display: grid;
+    .timeline-dot {
+      position: absolute;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+      left: 10px;
 
-            gap: 18px;
-        }
+      top: 4px;
 
-        .philosophy-item {
-            padding: 25px 15px;
+      width: 21px;
+      height: 21px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.13);
+      border-radius: 50%;
 
-            border-radius: 14px;
-        }
+      background: var(--gold);
 
-        .philosophy-item strong {
-            display: block;
+      border:
+        5px solid #f5f0e3;
 
-            color: #e3bc68;
+      box-shadow:
+        0 0 0 1px
+        var(--gold);
+    }
 
-            font-family: Arial, sans-serif;
+    .timeline-item h3 {
+      color: var(--green);
 
-            font-size: 24px;
+      font-size: 1.8rem;
 
-            margin-bottom: 8px;
-        }
+      margin-bottom: 8px;
+    }
 
-        .philosophy-item span {
-            color: #dbe5df;
+    .timeline-item p {
+      color: var(--muted);
+    }
 
-            font-family: Arial, sans-serif;
 
-            font-size: 14px;
-        }
+    /* ==============================
+       FILOSOFI
+    ============================== */
 
+    .philosophy {
+      background: var(--white);
+    }
 
-        /* ==============================
-           SLOGAN
-        ============================== */
+    .philosophy-grid {
+      display: grid;
 
-        .slogan {
-            font-size: 27px;
+      grid-template-columns:
+        repeat(3,1fr);
 
-            color: #e3bc68;
+      gap: 22px;
+    }
 
-            font-style: italic;
+    .meaning-card {
+      padding: 30px 25px;
 
-            margin-top: 25px;
-        }
+      background: white;
 
+      border:
+        1px solid #eee5d2;
 
-        /* ==============================
-           PUISI
-        ============================== */
+      border-radius: 20px;
 
-        .poems {
-            background: #fffdf8;
-        }
+      box-shadow:
+        0 8px 28px
+        rgba(32,45,36,.06);
 
-        .poem-grid {
-            display: grid;
+      text-align: center;
+    }
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    .meaning-symbol {
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-            gap: 22px;
-        }
+      font-size: 3rem;
 
-        .poem-card {
-            padding: 30px;
+      color: var(--gold);
 
-            background: #f7f2e8;
+      margin-bottom: 10px;
+    }
 
-            border-radius: 18px;
+    .meaning-card h3 {
+      color: var(--green);
 
-            transition: 0.3s;
-        }
+      font-size: 1.7rem;
 
-        .poem-card:hover {
-            transform: translateY(-5px);
-        }
+      margin-bottom: 10px;
+    }
 
-        .poem-card h3 {
-            color: #173b2f;
+    .meaning-card p {
+      color: var(--muted);
 
-            font-family: Arial, sans-serif;
+      font-size: .94rem;
+    }
 
-            font-size: 22px;
 
-            margin-bottom: 15px;
-        }
+    /* ==============================
+       PENDIRI
+    ============================== */
 
-        .poem-card p {
-            color: #53605a;
+    .founder {
+      color: white;
 
-            font-style: italic;
-        }
+      text-align: center;
 
-        .poem-author {
-            display: block;
+      background:
+        linear-gradient(
+          135deg,
+          #0b2419,
+          #174632
+        );
+    }
 
-            margin-top: 15px;
+    .founder-box {
+      max-width: 760px;
 
-            color: #a77a2b;
+      margin: auto;
 
-            font-family: Arial, sans-serif;
+      padding: 50px 25px;
 
-            font-size: 13px;
+      border:
+        1px solid
+        rgba(241,213,138,.25);
 
-            font-style: normal;
-        }
+      border-radius: 26px;
 
+      background:
+        rgba(255,255,255,.04);
+    }
 
-        /* ==============================
-           KONTAK
-        ============================== */
+    .founder .section-label {
+      color: var(--gold-light);
+    }
 
-        .contact {
-            background: #f7f2e8;
+    .founder h2 {
+      color: var(--gold-light);
 
-            text-align: center;
-        }
+      font-size:
+        clamp(2.6rem, 5vw, 4rem);
+    }
 
-        .contact-box {
-            max-width: 850px;
+    .founder-description {
+      color:
+        rgba(255,255,255,.72);
 
-            margin: auto;
+      margin:
+        15px auto 25px;
 
-            padding: 40px;
+      max-width: 650px;
+    }
 
-            background: white;
+    .founder-name {
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-            border-radius: 20px;
+      font-size: 2rem;
 
-            box-shadow:
-                0 12px 35px rgba(0,0,0,0.07);
-        }
+      font-weight: 700;
+    }
 
-        .contact-box h3 {
-            color: #173b2f;
 
-            font-family: Arial, sans-serif;
+    /* ==============================
+       SLOGAN
+    ============================== */
 
-            font-size: 28px;
+    .final-slogan {
+      padding: 70px 20px;
 
-            margin-bottom: 12px;
-        }
+      text-align: center;
 
-        .contact-box p {
-            color: #5c6861;
+      background: #f5f0e3;
+    }
 
-            margin-bottom: 25px;
-        }
+    .final-slogan p {
+      max-width: 850px;
 
-        .contact-items {
-            display: flex;
+      margin: auto;
 
-            justify-content: center;
+      color: var(--green);
 
-            flex-wrap: wrap;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-            gap: 12px;
-        }
+      font-size:
+        clamp(2rem, 4vw, 3.4rem);
 
-        .contact-item {
-            padding: 11px 17px;
+      font-style: italic;
 
-            border-radius: 8px;
+      line-height: 1.2;
+    }
 
-            background: #f1e7d5;
 
-            color: #173b2f;
+    /* ==============================
+       FOOTER
+    ============================== */
 
-            font-family: Arial, sans-serif;
+    footer {
+      padding: 35px 20px;
 
-            font-size: 14px;
-        }
+      text-align: center;
 
+      color:
+        rgba(255,255,255,.65);
 
-        /* ==============================
-           FOOTER
-        ============================== */
+      background: #081b12;
 
-        footer {
-            background: #0d2c24;
+      font-size: .85rem;
+    }
 
-            color: #d8e1dd;
+    footer strong {
+      color: var(--gold-light);
+    }
 
-            padding:
-                50px
-                20px
-                20px;
+    footer p {
+      margin: 5px 0;
+    }
 
-            font-family: Arial, sans-serif;
-        }
 
-        .footer-grid {
-            max-width: 1100px;
+    /* ==============================
+       MOBILE
+    ============================== */
 
-            margin: auto;
+    @media(max-width:800px) {
 
-            display: grid;
+      .menu-button {
+        display: block;
+      }
 
-            grid-template-columns:
-                2fr
-                1fr
-                1fr;
+      .nav-menu {
+        display: none;
 
-            gap: 40px;
-        }
+        position: absolute;
 
-        footer h3 {
-            color: #e3bc68;
+        left: 18px;
+        right: 18px;
 
-            margin-bottom: 15px;
-        }
+        top: 65px;
 
-        footer p,
-        footer li {
-            font-size: 14px;
+        padding: 18px;
 
-            color: #c4d0ca;
-        }
+        flex-direction: column;
 
-        footer ul {
-            list-style: none;
-        }
+        gap: 4px;
 
-        footer li {
-            margin-bottom: 7px;
-        }
+        background:
+          var(--green-dark);
 
-        .copyright {
-            max-width: 1100px;
+        border-radius: 14px;
 
-            margin:
-                35px
-                auto
-                0;
+        border:
+          1px solid
+          rgba(255,255,255,.12);
+      }
 
-            padding-top: 18px;
+      .nav-menu.active {
+        display: flex;
+      }
 
-            border-top:
-                1px solid
-                rgba(255,255,255,0.12);
+      .nav-menu a {
+        display: block;
 
-            text-align: center;
+        padding: 8px;
+      }
 
-            color: #93a29b;
+      .hero-grid,
+      .profile-grid,
+      .vision-grid {
+        grid-template-columns: 1fr;
+      }
 
-            font-size: 12px;
-        }
+      .hero {
+        padding-top: 110px;
+      }
 
+      .hero-content {
+        text-align: center;
+      }
 
-        /* ==============================
-           RESPONSIVE HP
-        ============================== */
+      .eyebrow {
+        justify-content: center;
+      }
 
-        @media (max-width: 800px) {
+      .hero-buttons {
+        justify-content: center;
+      }
 
-            .nav-links {
-                display: none;
+      .hero-logo {
+        width: min(330px,80vw);
+      }
 
-                position: absolute;
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
 
-                top: 70px;
-                left: 0;
+      section {
+        padding: 75px 0;
+      }
+    }
 
-                width: 100%;
-
-                padding: 20px;
-
-                background: #173b2f;
-
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-button {
-                display: block;
-            }
-
-            .about-grid,
-            .vision-grid,
-            .poem-grid,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .achievement-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .philosophy-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 44px;
-            }
-
-            .hero-description {
-                font-size: 17px;
-            }
-
-            section {
-                padding: 70px 18px;
-            }
-
-            .section-heading h2 {
-                font-size: 31px;
-            }
-
-            .white-card,
-            .identity-card,
-            .vision-card,
-            .contact-box {
-                padding: 27px;
-            }
-
-        }
-
-    </style>
+  </style>
 </head>
 
 
 <body>
 
 
-<!-- ==============================
-     NAVIGASI
-============================== -->
+  <!-- ==============================
+       NAVIGASI
+  ============================== -->
 
-<nav>
+  <header class="navbar">
 
-    <div class="nav-container">
+    <div class="container nav-container">
 
-        <a href="#beranda" class="logo">
+      <a href="#beranda" class="brand">
 
-            <div class="logo-symbol">
-                🌿
-            </div>
+        <img
+          src="logo-rtpn.jpg"
+          alt="Logo Ruang Taman Puisi Nusantara">
 
-            Ruang Taman Puisi
+        <span>RTPN</span>
 
-        </a>
-
-
-        <div
-            class="menu-button"
-            onclick="toggleMenu()">
-
-            ☰
-
-        </div>
+      </a>
 
 
-        <ul
-            class="nav-links"
-            id="navLinks">
+      <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Menu">
 
-            <li>
-                <a href="#beranda">
-                    Beranda
-                </a>
-            </li>
+        ☰
 
-            <li>
-                <a href="#tentang">
-                    Tentang
-                </a>
-            </li>
+      </button>
 
-            <li>
-                <a href="#sejarah">
-                    Sejarah
-                </a>
-            </li>
 
-            <li>
-                <a href="#visi">
-                    Visi & Misi
-                </a>
-            </li>
+      <ul class="nav-menu" id="navMenu">
 
-            <li>
-                <a href="#pencapaian">
-                    Pencapaian
-                </a>
-            </li>
+        <li>
+          <a href="#beranda">
+            Beranda
+          </a>
+        </li>
 
-            <li>
-                <a href="#puisi">
-                    Puisi
-                </a>
-            </li>
+        <li>
+          <a href="#profil">
+            Profil
+          </a>
+        </li>
 
-            <li>
-                <a href="#kontak">
-                    Kontak
-                </a>
-            </li>
+        <li>
+          <a href="#visi-misi">
+            Visi & Misi
+          </a>
+        </li>
 
-        </ul>
+        <li>
+          <a href="#perjalanan">
+            Perjalanan
+          </a>
+        </li>
+
+        <li>
+          <a href="#filosofi">
+            Filosofi
+          </a>
+        </li>
+
+        <li>
+          <a href="#pendiri">
+            Pendiri
+          </a>
+        </li>
+
+      </ul>
 
     </div>
 
-</nav>
+  </header>
 
 
 
-<!-- ==============================
-     BERANDA
-============================== -->
-
-<header
-    class="hero"
-    id="beranda">
-
-    <div class="hero-content">
+  <main>
 
 
-        <div class="hero-icon">
-            🌿
-        </div>
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section
+      class="hero"
+      id="beranda">
+
+      <div class="container hero-grid">
 
 
-        <div class="badge">
-            KOMUNITAS SASTRA & SENI
-        </div>
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Komunitas Sastra & Seni
+          </div>
 
 
-        <h1>
+          <h1>
+
             Ruang Taman
+
+            <br>
+
             <span>
-                Puisi Nusantara
+              Puisi Nusantara
             </span>
-        </h1>
+
+          </h1>
 
 
-        <p class="hero-description">
+          <p class="hero-description">
 
-            Sebuah ruang bagi para pecinta puisi,
-            sastra, literasi, seni, dan budaya
-            dari seluruh penjuru Nusantara.
+            Sebuah taman literasi yang mempertemukan
+            puisi, sastra, seni, budaya, dan para
+            pegiat kata dari berbagai penjuru Nusantara.
 
-        </p>
+          </p>
 
 
-        <p class="hero-slogan">
+          <div class="slogan">
 
             “Menanam Kata, Menumbuhkan Makna,
             Merangkai Nusantara.”
 
-        </p>
+          </div>
 
 
-        <div class="hero-buttons">
+          <div class="hero-buttons">
 
             <a
-                href="#tentang"
-                class="button button-primary">
+              href="#profil"
+              class="button button-gold">
 
-                Kenali Kami
+              Kenali RTPN
 
             </a>
 
 
             <a
-                href="#puisi"
-                class="button button-outline">
+              href="#pendiri"
+              class="button button-outline">
 
-                Jelajahi Puisi
+              Tentang Pendiri
 
             </a>
 
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<!-- ==============================
-     TENTANG
-============================== -->
-
-<section
-    class="about"
-    id="tentang">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <small>
-                Profil Komunitas
-            </small>
-
-            <h2>
-                Biografi RTPN
-            </h2>
-
-            <p>
-                Mengenal lebih dekat Ruang Taman
-                Puisi Nusantara.
-            </p>
+          </div>
 
         </div>
 
 
-        <div class="about-grid">
 
+        <div>
 
-            <div class="white-card">
-
-                <h3>
-                    Ruang Taman Puisi Nusantara
-                </h3>
-
-
-                <p>
-                    Ruang Taman Puisi Nusantara
-                    (RTPN) lahir pada
-                    <strong>
-                        10 Februari 2019
-                    </strong>
-                    sebagai sebuah wadah bagi para
-                    pecinta puisi, sastra, dan seni
-                    literasi di seluruh penjuru Nusantara.
-                </p>
-
-
-                <p>
-                    Lahir dari semangat untuk menyatukan
-                    suara-suara penyair dan penulis dari
-                    berbagai latar budaya dan daerah,
-                    komunitas ini memposisikan diri sebagai
-                    taman tempat tumbuhnya kata-kata indah,
-                    gagasan, dan imajinasi.
-                </p>
-
-
-                <p>
-                    Gagasan awalnya muncul dari kerinduan
-                    untuk memiliki “ruang” yang tidak hanya
-                    menjadi forum diskusi, tetapi juga
-                    “taman” yang subur bagi lahirnya
-                    karya-karya puitis yang mengakar pada
-                    kearifan lokal dan keindahan bahasa
-                    Indonesia.
-                </p>
-
-            </div>
-
-
-
-            <div class="identity-card">
-
-                <h3>
-                    Identitas Komunitas
-                </h3>
-
-
-                <div class="identity-item">
-                    <strong>
-                        Nama
-                    </strong>
-                    <br>
-                    Ruang Taman Puisi Nusantara
-                </div>
-
-
-                <div class="identity-item">
-                    <strong>
-                        Tanggal Lahir
-                    </strong>
-                    <br>
-                    10 Februari 2019
-                </div>
-
-
-                <div class="identity-item">
-                    <strong>
-                        Jenis
-                    </strong>
-                    <br>
-                    Komunitas Sastra & Seni
-                </div>
-
-
-                <div class="identity-item">
-                    <strong>
-                        Fokus
-                    </strong>
-                    <br>
-                    Pengembangan literasi,
-                    puisi, dan budaya Nusantara
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==============================
-     SEJARAH
-============================== -->
-
-<section
-    class="history"
-    id="sejarah">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <small>
-                Perjalanan
-            </small>
-
-            <h2>
-                Sejarah Berdiri
-            </h2>
+          <img
+            src="logo-rtpn.jpg"
+            alt="Logo resmi Ruang Taman Puisi Nusantara"
+            class="hero-logo">
 
         </div>
 
 
-        <div class="history-box">
+      </div>
+
+    </section>
 
 
-            <div class="history-date">
-                10 Februari 2019
-            </div>
 
+    <!-- ==============================
+         PROFIL
+    ============================== -->
+
+    <section
+      class="profile"
+      id="profil">
+
+      <div class="container">
+
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Profil Resmi
+          </div>
+
+          <h2>
+            Biografi Ruang Taman Puisi Nusantara
+          </h2>
+
+          <p>
+            Ruang tumbuh bagi kata, gagasan,
+            karya, dan kebudayaan Nusantara.
+          </p>
+
+        </div>
+
+
+
+        <div class="profile-grid">
+
+
+          <div class="profile-card">
 
             <h3>
-                Awal Perjalanan RTPN
+              Identitas
+            </h3>
+
+
+            <ul class="facts">
+
+              <li>
+
+                <strong>
+                  Nama
+                </strong>
+
+                Ruang Taman Puisi Nusantara
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Tanggal Lahir
+                </strong>
+
+                10 Februari 2019
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Jenis
+                </strong>
+
+                Komunitas Sastra & Seni
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Fokus
+                </strong>
+
+                Pengembangan literasi,
+                puisi, dan budaya Nusantara
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Pendiri
+                </strong>
+
+                Wisnu Baiwi Wahyuda
+
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="story">
+
+            <h3>
+              Sejarah Berdiri
             </h3>
 
 
             <p>
 
-                Ruang Taman Puisi Nusantara (RTPN)
-                lahir pada 10 Februari 2019 sebagai
-                sebuah wadah bagi para pecinta puisi,
-                sastra, dan seni literasi di seluruh
-                penjuru Nusantara.
+              Ruang Taman Puisi Nusantara (RTPN)
+              lahir pada 10 Februari 2019 sebagai
+              sebuah wadah bagi para pecinta puisi,
+              sastra, dan seni literasi di seluruh
+              penjuru Nusantara.
 
             </p>
 
 
             <p>
 
-                Lahir dari semangat untuk menyatukan
-                suara-suara penyair dan penulis dari
-                berbagai latar budaya dan daerah,
-                komunitas ini memposisikan diri sebagai
-                taman tempat tumbuhnya kata-kata indah,
-                gagasan, dan imajinasi.
+              Lahir dari semangat untuk menyatukan
+              suara-suara penyair dan penulis dari
+              berbagai latar budaya dan daerah,
+              komunitas ini memposisikan diri sebagai
+              taman tempat tumbuhnya kata-kata indah,
+              gagasan, dan imajinasi.
 
             </p>
 
 
             <p>
 
-                Gagasan awalnya muncul dari kerinduan
-                untuk memiliki “ruang” yang tidak hanya
-                menjadi forum diskusi, tetapi juga
-                “taman” yang subur bagi lahirnya
-                karya-karya puitis yang mengakar pada
-                kearifan lokal dan keindahan bahasa
-                Indonesia.
+              Gagasan awalnya muncul dari kerinduan
+              untuk memiliki “ruang” yang tidak hanya
+              menjadi forum diskusi, tetapi juga
+              “taman” yang subur bagi lahirnya
+              karya-karya puitis yang mengakar pada
+              kearifan lokal dan keindahan bahasa
+              Indonesia.
 
             </p>
+
+
+            <div class="quote">
+
+              “Ruang untuk berkarya,
+              taman untuk menumbuhkan makna.”
+
+            </div>
+
+          </div>
+
 
         </div>
 
-    </div>
+      </div>
 
-</section>
-
-
-
-<!-- ==============================
-     VISI MISI
-============================== -->
-
-<section
-    class="vision"
-    id="visi">
-
-    <div class="container">
+    </section>
 
 
-        <div class="section-heading">
 
-            <small>
-                Arah Perjuangan
-            </small>
+    <!-- ==============================
+         VISI MISI
+    ============================== -->
 
-            <h2>
-                Visi dan Misi
-            </h2>
+    <section
+      class="vision"
+      id="visi-misi">
 
-            <p>
-                Menjadikan sastra sebagai ruang
-                tumbuh, berkarya, dan bersilaturahmi.
-            </p>
+      <div class="container">
+
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Arah Pergerakan
+          </div>
+
+          <h2>
+            Visi dan Misi
+          </h2>
+
+          <p>
+
+            Menjadikan sastra sebagai ruang
+            perjumpaan, pertumbuhan, dan
+            pelestarian budaya.
+
+          </p>
 
         </div>
+
 
 
         <div class="vision-grid">
 
 
-            <div class="vision-card">
+          <article class="vision-card">
 
-                <h3>
-                    Visi
-                </h3>
-
-
-                <p>
-
-                    Menjadi taman literasi yang memupuk
-                    kecintaan terhadap puisi, menjaga
-                    warisan sastra Nusantara, dan
-                    memperkenalkannya kepada generasi muda.
-
-                </p>
-
+            <div class="number">
+              01
             </div>
-
-
-
-            <div class="vision-card">
-
-                <h3>
-                    Misi
-                </h3>
-
-
-                <ol class="mission-list">
-
-                    <li>
-                        Mendorong pertumbuhan penulis
-                        dan penyair di seluruh daerah
-                        Indonesia.
-                    </li>
-
-                    <li>
-                        Menyelenggarakan kegiatan literasi
-                        seperti lomba, diskusi, dan
-                        pembacaan puisi.
-                    </li>
-
-                    <li>
-                        Membangun ruang inklusif yang
-                        menghubungkan para pegiat sastra
-                        dari berbagai latar budaya.
-                    </li>
-
-                    <li>
-                        Memanfaatkan teknologi digital
-                        untuk memperluas jangkauan
-                        karya sastra.
-                    </li>
-
-                </ol>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==============================
-     PENCAPAIAN
-============================== -->
-
-<section
-    class="achievements"
-    id="pencapaian">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <small>
-                Jejak Perjalanan
-            </small>
-
-            <h2>
-                Perjalanan dan Pencapaian
-            </h2>
-
-            <p>
-                Ruang tumbuh bagi penulis, penyair,
-                dan pegiat literasi.
-            </p>
-
-        </div>
-
-
-        <div class="achievement-grid">
-
-
-            <div class="achievement-card">
-
-                <span class="number">
-                    2019
-                </span>
-
-                <p>
-                    Tahun berdirinya
-                    RTPN
-                </p>
-
-            </div>
-
-
-            <div class="achievement-card">
-
-                <span class="number">
-                    Puisi
-                </span>
-
-                <p>
-                    Festival dan lomba
-                    daring maupun luring
-                </p>
-
-            </div>
-
-
-            <div class="achievement-card">
-
-                <span class="number">
-                    Literasi
-                </span>
-
-                <p>
-                    Diskusi, kelas menulis,
-                    dan pelatihan
-                </p>
-
-            </div>
-
-
-            <div class="achievement-card">
-
-                <span class="number">
-                    Nusantara
-                </span>
-
-                <p>
-                    Silaturahmi sastra
-                    lintas daerah
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="achievement-description">
-
-            <p>
-
-                Sejak lahir pada 10 Februari 2019,
-                RTPN telah menjadi rumah bagi ratusan
-                bahkan ribuan penulis dan penyair yang
-                tersebar di berbagai wilayah Nusantara.
-
-            </p>
-
-
-            <br>
-
-
-            <p>
-
-                Komunitas ini telah mengadakan berbagai
-                festival dan lomba puisi daring dan
-                luring, event yang menampilkan karya
-                dari beragam penulis daerah, diskusi
-                literasi, kelas menulis, pelatihan online,
-                serta menjadi ruang silaturahmi sastra
-                bagi generasi muda dan senior yang
-                mencintai kata-kata.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==============================
-     FILOSOFI
-============================== -->
-
-<section
-    class="philosophy">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <small>
-                Makna Kelahiran
-            </small>
-
-            <h2>
-                Filosofi 10 Februari 2019
-            </h2>
-
-        </div>
-
-
-        <div class="philosophy-box">
-
-
-            <p>
-
-                Pemilihan tanggal 10 Februari 2019
-                sebagai hari lahir Ruang Taman Puisi
-                Nusantara memiliki arti simbolik.
-
-            </p>
-
-
-            <div class="philosophy-grid">
-
-
-                <div class="philosophy-item">
-
-                    <strong>
-                        10
-                    </strong>
-
-                    <span>
-                        Menandakan kesempurnaan
-                        dan kesatuan.
-                    </span>
-
-                </div>
-
-
-                <div class="philosophy-item">
-
-                    <strong>
-                        Februari
-                    </strong>
-
-                    <span>
-                        Identik dengan kehangatan kasih
-                        dan semangat cinta terhadap kata
-                        dan budaya.
-                    </span>
-
-                </div>
-
-
-                <div class="philosophy-item">
-
-                    <strong>
-                        2019
-                    </strong>
-
-                    <span>
-                        Menandai era literasi digital
-                        yang membuka jembatan baru bagi
-                        penyair untuk berkarya.
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="slogan">
-
-                “Menanam Kata, Menumbuhkan Makna,
-                Merangkai Nusantara.”
-
-            </div>
-
-
-            <p style="margin-top:20px">
-
-                Slogan ini menjadi semangat utama
-                komunitas untuk terus menghadirkan
-                karya yang tidak hanya indah, tetapi
-                juga bermakna bagi kehidupan dan
-                kebudayaan bangsa.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==============================
-     PUISI
-============================== -->
-
-<section
-    class="poems"
-    id="puisi">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <small>
-                Taman Kata
-            </small>
-
-            <h2>
-                Puisi Nusantara
-            </h2>
-
-            <p>
-                Ruang kecil untuk menikmati
-                keindahan kata dan rasa.
-            </p>
-
-        </div>
-
-
-        <div class="poem-grid">
-
-
-            <article class="poem-card">
-
-                <h3>
-                    Taman Kata
-                </h3>
-
-                <p>
-
-                    Di taman kata kita bertemu,<br>
-                    merangkai rasa menjadi aksara,<br>
-                    menjaga suara Nusantara,<br>
-                    agar tetap hidup sepanjang masa.
-
-                </p>
-
-                <span class="poem-author">
-                    — Ruang Taman Puisi Nusantara
-                </span>
-
-            </article>
-
-
-
-            <article class="poem-card">
-
-                <h3>
-                    Tanah Air Kata
-                </h3>
-
-                <p>
-
-                    Dari tanah yang penuh cerita,<br>
-                    tumbuh kata menjadi cahaya,<br>
-                    dari suara para leluhur,<br>
-                    kita belajar mencintai budaya.
-
-                </p>
-
-                <span class="poem-author">
-                    — Koleksi Nusantara
-                </span>
-
-            </article>
-
-
-
-            <article class="poem-card">
-
-                <h3>
-                    Malam di Nusantara
-                </h3>
-
-                <p>
-
-                    Bulan menggantung di langit desa,<br>
-                    angin membawa cerita lama,<br>
-                    di antara sunyi dan doa,<br>
-                    Nusantara tetap menyala.
-
-                </p>
-
-                <span class="poem-author">
-                    — Taman Puisi
-                </span>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==============================
-     KONTAK
-============================== -->
-
-<section
-    class="contact"
-    id="kontak">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <small>
-                Hubungi Kami
-            </small>
-
-            <h2>
-                Mari Berkolaborasi
-            </h2>
-
-        </div>
-
-
-        <div class="contact-box">
-
 
             <h3>
-                Mari Menanam Kata Bersama
-            </h3>
-
-
-            <p>
-
-                Ruang Taman Puisi Nusantara terbuka
-                untuk kolaborasi, karya sastra,
-                kegiatan seni, literasi, dan berbagai
-                inisiatif kebudayaan.
-
-            </p>
-
-
-            <div class="contact-items">
-
-                <div class="contact-item">
-                    📧 Email Resmi RTPN
-                </div>
-
-                <div class="contact-item">
-                    📱 Instagram RTPN
-                </div>
-
-                <div class="contact-item">
-                    📚 Karya & Literasi
-                </div>
-
-            </div>
-
-
-            <p style="
-                margin-top:25px;
-                font-size:13px;
-                color:#8a918d;
-            ">
-
-                Informasi kontak resmi dapat
-                ditambahkan kemudian.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==============================
-     FOOTER
-============================== -->
-
-<footer>
-
-    <div class="footer-grid">
-
-
-        <div>
-
-            <h3>
-                Ruang Taman Puisi Nusantara
+              Visi
             </h3>
 
             <p>
 
-                Komunitas Sastra & Seni yang berfokus
-                pada pengembangan literasi, puisi,
-                dan budaya Nusantara.
+              Menjadi taman literasi yang memupuk
+              kecintaan terhadap puisi, menjaga
+              warisan sastra Nusantara, dan
+              memperkenalkannya kepada generasi muda.
 
             </p>
 
-        </div>
+          </article>
 
 
-        <div>
+
+          <article class="vision-card">
+
+            <div class="number">
+              02
+            </div>
 
             <h3>
-                Navigasi
+              Misi
             </h3>
 
-            <ul>
 
-                <li>
-                    <a href="#beranda">
-                        Beranda
-                    </a>
-                </li>
+            <ul class="mission-list">
 
-                <li>
-                    <a href="#tentang">
-                        Tentang
-                    </a>
-                </li>
+              <li>
+                Mendorong pertumbuhan penulis dan
+                penyair di seluruh daerah Indonesia.
+              </li>
 
-                <li>
-                    <a href="#sejarah">
-                        Sejarah
-                    </a>
-                </li>
+              <li>
+                Menyelenggarakan kegiatan literasi
+                seperti lomba, diskusi, dan
+                pembacaan puisi.
+              </li>
 
-                <li>
-                    <a href="#visi">
-                        Visi & Misi
-                    </a>
-                </li>
+              <li>
+                Membangun ruang inklusif yang
+                menghubungkan para pegiat sastra
+                dari berbagai latar budaya.
+              </li>
 
-                <li>
-                    <a href="#puisi">
-                        Puisi
-                    </a>
-                </li>
+              <li>
+                Memanfaatkan teknologi digital
+                untuk memperluas jangkauan karya
+                sastra.
+              </li>
 
             </ul>
 
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         PERJALANAN
+    ============================== -->
+
+    <section
+      class="journey"
+      id="perjalanan">
+
+      <div class="container">
+
+
+        <div class="section-header">
+
+          <div class="section-label">
+            Jejak Komunitas
+          </div>
+
+          <h2>
+            Perjalanan dan Pencapaian
+          </h2>
+
+          <p>
+
+            Sejak 10 Februari 2019, RTPN berkembang
+            menjadi rumah bagi para penulis dan
+            penyair dari berbagai wilayah Nusantara.
+
+          </p>
+
         </div>
 
 
-        <div>
+
+        <div class="timeline">
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
 
             <h3>
-                Slogan
+              Festival & Lomba Puisi
             </h3>
 
             <p>
-                Menanam Kata.
+
+              Mengadakan berbagai festival dan
+              lomba puisi secara daring maupun luring.
+
             </p>
 
-            <p>
-                Menumbuhkan Makna.
-            </p>
+          </div>
+
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+              Panggung Karya Daerah
+            </h3>
 
             <p>
-                Merangkai Nusantara.
+
+              Mengadakan event yang menampilkan
+              karya dari beragam penulis daerah.
+
             </p>
+
+          </div>
+
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+              Diskusi & Kelas Literasi
+            </h3>
+
+            <p>
+
+              Menyelenggarakan diskusi literasi,
+              kelas menulis, dan pelatihan online.
+
+            </p>
+
+          </div>
+
+
+
+          <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+              Silaturahmi Sastra
+            </h3>
+
+            <p>
+
+              Menjadi ruang silaturahmi sastra bagi
+              generasi muda dan senior yang mencintai
+              kata-kata.
+
+            </p>
+
+          </div>
+
 
         </div>
 
-    </div>
+      </div>
 
-
-    <div class="copyright">
-
-        © 2026 Ruang Taman Puisi Nusantara.
-        Semua hak cipta dilindungi.
-
-    </div>
-
-</footer>
+    </section>
 
 
 
-<!-- ==============================
-     JAVASCRIPT MENU HP
-============================== -->
+    <!-- ==============================
+         FILOSOFI
+    ============================== -->
 
-<script>
+    <section
+      class="philosophy"
+      id="filosofi">
 
-function toggleMenu() {
+      <div class="container">
 
-    const menu =
-        document.getElementById("navLinks");
 
-    menu.classList.toggle("active");
+        <div class="section-header">
 
-}
+          <div class="section-label">
+            Makna Kelahiran
+          </div>
 
-</script>
+          <h2>
+            Filosofi 10 Februari 2019
+          </h2>
+
+          <p>
+
+            Pemilihan tanggal lahir RTPN membawa
+            makna simbolik bagi perjalanan komunitas.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="philosophy-grid">
+
+
+          <article class="meaning-card">
+
+            <div class="meaning-symbol">
+              10
+            </div>
+
+            <h3>
+              Kesempurnaan & Kesatuan
+            </h3>
+
+            <p>
+
+              Angka 10 dimaknai sebagai simbol
+              kesempurnaan dan kesatuan.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="meaning-card">
+
+            <div class="meaning-symbol">
+              02
+            </div>
+
+            <h3>
+              Kasih & Cinta
+            </h3>
+
+            <p>
+
+              Bulan Februari identik dengan
+              kehangatan kasih dan semangat cinta
+              terhadap kata dan budaya.
+
+            </p>
+
+          </article>
+
+
+
+          <article class="meaning-card">
+
+            <div class="meaning-symbol">
+              2019
+            </div>
+
+            <h3>
+              Jembatan Digital
+            </h3>
+
+            <p>
+
+              Tahun 2019 menandai era literasi
+              digital yang membuka jembatan baru
+              bagi penyair untuk berkarya dan
+              dikenal lebih luas.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         PENDIRI
+    ============================== -->
+
+    <section
+      class="founder"
+      id="pendiri">
+
+      <div class="container">
+
+        <div class="founder-box">
+
+          <div class="section-label">
+            Pendiri
+          </div>
+
+          <h2>
+            Wisnu Baiwi Wahyuda
+          </h2>
+
+          <p class="founder-description">
+
+            Pendiri Ruang Taman Puisi Nusantara,
+            yang menjadi bagian dari perjalanan
+            lahirnya ruang bersama bagi puisi,
+            sastra, literasi, dan budaya Nusantara.
+
+          </p>
+
+          <div class="founder-name">
+
+            Ruang Taman Puisi Nusantara
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SLOGAN
+    ============================== -->
+
+    <section class="final-slogan">
+
+      <p>
+
+        “Menanam Kata, Menumbuhkan Makna,
+        Merangkai Nusantara.”
+
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
+  <footer>
+
+    <p>
+
+      <strong>
+        RUANG TAMAN PUISI NUSANTARA
+      </strong>
+
+    </p>
+
+    <p>
+
+      “Menanam Kata, Menumbuhkan Makna,
+      Merangkai Nusantara.”
+
+    </p>
+
+    <p>
+
+      © 2019–2026 Ruang Taman Puisi Nusantara.
+      Seluruh hak cipta dilindungi.
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- ==============================
+       JAVASCRIPT MENU HP
+  ============================== -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu =
+        document.getElementById("navMenu");
+
+      menu.classList.toggle("active");
+
+    }
+
+
+    document
+      .querySelectorAll(".nav-menu a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          document
+            .getElementById("navMenu")
+            .classList.remove("active");
+
+        });
+
+      });
+
+  </script>
 
 
 </body>
