@@ -492,8 +492,16 @@ KIRIM PENDAFTARAN
 <footer class="footer">
 © Ruang Taman Puisi Nusantara · Menanam Kata, Menumbuhkan Makna, Merangkai Nusantara.
 </footer>
+<script>
+const RTPN_API = "https://script.google.com/macros/s/AKfycbzJ5SDWAvNtEdXOYdmDTP_xVBBeY9Zo7jIz8ygBcZRL0OGfekDh7FKtVFo46OZXx5A/exec";
 
-  
+const form = document.querySelector("form");
+
+if (form) {
+  form.action = RTPN_API;
+  form.method = "POST";
+}
+</script>
 </body>
 </html>
 
