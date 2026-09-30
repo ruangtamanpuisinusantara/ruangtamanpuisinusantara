@@ -491,7 +491,41 @@ KIRIM PENDAFTARAN
 <footer class="footer">
 © Ruang Taman Puisi Nusantara · Menanam Kata, Menumbuhkan Makna, Merangkai Nusantara.
 </footer>
+<script>
+const RTPN_API = 'https://script.google.com/macros/s/AKfycbzJ5SDWAvNtEdXOYdmDTP_xVBBeY9Zo7jIz8ygBcZRL0OGfekDh7FKtVFo46OZXx5A/exec';
 
+const form = document.querySelector('form');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const button = form.querySelector('button[type="submit"]');
+
+  button.disabled = true;
+  button.textContent = 'MENGIRIM...';
+
+  try {
+    const formData = new FormData(form);
+
+    await fetch(RTPN_API, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
+
+    alert('Pendaftaran berhasil dikirim. Terima kasih telah bergabung dengan RTPN.');
+
+    form.reset();
+
+  } catch (error) {
+    alert('Pendaftaran belum berhasil dikirim. Silakan coba lagi.');
+  }
+
+  button.disabled = false;
+  button.textContent = 'KIRIM PENDAFTARAN';
+});
+</script>
+  
 </body>
 </html>
 
